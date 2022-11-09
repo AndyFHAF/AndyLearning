@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .stacktable { width: 100%; }
+    .stacktable tr td, .stacktable tr th { border: 1px solid #dfdfdf; padding: 10px; }
+    .st-head-row { padding-top: 1em; }
+    .st-head-row.st-head-row-main { font-size: 1.5em; padding-top: 0; }
+    .st-key { width: 49%; text-align: right; padding-right: 1%; font-weight: bold; }
+    .st-val { width: 49%; padding-left: 1%; }
+   
+    .stacktable.large-only { display: table; }
+    .stacktable.small-only { display: none; }
+
+    @media (max-width: 768px) {
+        .stacktable.large-only { display: none; }
+        .stacktable.small-only { display: table; }
+    }
+    </style>
+</head>
+<body>
+    <table id="make-responsive" class="table" width = "100%">
+        <thead>
+            <tr>
+                <th width="30%">Name</th>
+                <th width="30%">Phone</th>
+                <th width="30%">Description</th>
+                <th width="10%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Carlo Fontanos</td>
+                <td>514-343-2265</td>
+                <td>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium</td>
+                <td><a href="#">Edit</a></td>
+            </tr>
+            <tr>
+                <td>Brad Jaymond</td>
+                <td>658-341-112</td>
+                <td>Lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram</td>
+                <td><a href="#">Edit</a></td>
+            </tr>
+            <tr>
+                <td>John Garcia</td>
+                <td>652-755-2322</td>
+                <td>Anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</td>
+                <td><a href="#">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://files-stackablejs.netdna-ssl.com/stacktable.min.js" type="text/javascript"></script>
+
+    <script>
+        $('#make-responsive').cardtable();
+    </script>
+
+</body>
+</html>

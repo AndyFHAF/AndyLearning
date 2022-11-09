@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/8344/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Submitted Successfully!")
+        },
+        error: function(){
+          alert("Error: Form Not Submitted")
+        }
+    });
+}
+</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body{
+        text-align: center;
+        background-color: #FA8BFF;
+        background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+        font-family: 'Roboto', sans-serif;
+    }
+    input{
+        border-top: 1px;
+        border-left: none;
+        border-right:none;
+    }
+    #form{
+        background-color: white;
+        margin: 50px 350px 100px 350px;
+        padding: 40px 0 100px 0;
+        border-radius: 10px;
+        width: auto;
+        height: auto;
+    }
+    button{
+        background-color: #FA8BFF;
+        background-image: linear-gradient(90deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+        border:none;
+        color: white;
+        padding:20px 0 20px 0;
+        border-radius: 20px;
+        width:75%;
+        height:75%;
+        text-align: center;
+        font-size:25px;
+    }
+
+    button:hover{
+        background-color: #FA8BFF;
+        background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
+    }
+    .writeInInputs{
+        padding-top:10px;   
+    }
+    .writeInInputs input{
+        width:75%;
+        border-top: 1px;
+        border-left: none;
+        border-right:none;
+        padding:15px;
+        text-align: left;
+     
+
+    }
+
+    .writeInInputs h3{
+       text-align:left;
+       padding-left:12%;
+
+    }
+    .writeInInputs textarea{
+        width: 75%;
+        border-top: 1px;
+        border-left: none;
+        border-right:none;
+        padding-top:10px;   
+    }
+    #buttonBreak{
+        padding:75px;
+
+    }
+    .chooseInput{
+        text-align: left;
+        padding-left:12%;
+        padding-top:10px;
+    }
+    select{
+        width:50%;
+        height:50px;
+        background-color:whitesmoke;
+        border-radius:5px;
+        padding:5px;
+        border:none;
+    }
+  </style>
+</head>
+<body>
+<div id="form"> 
+  <form id="myForm">
+    <h1><label>Test Form</label></h1>
+        <div class="writeInInputs">
+            <h3><label>Full Name</label></h3>
+            <input name="full_name" placeholder="Enter Your Full Name" />
+            
+
+            <h3><label>Email</label></h3>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email"/>
+            
+            <h3><label>Phone Number<label/></h3>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" pattern="[0-9]{10}">
+        </div>
+
+        <div class="chooseInput">   
+            <h3><label>Age</label></h3> 
+            <input type="radio" id="age" name="age" value="under 18"/> > 18<br/>
+            <input type="radio" id="age" name="age" value="18-35" /> 18-35<br/>
+            <input type="radio" id="age" name="age" value="35 or older"/> 35+ <br/>
+            <br/>
+   
+            <h3><label>Education</label></h3>
+            <input type="checkbox" id="edu1" name="edu1" value="High School" /> High School<br/>
+            <input type="checkbox" id="edu2" name="edu2" value="Some College" /> Some College<br/>
+            <input type="checkbox" id="edu3" name="edu3" value="Associate's Degree" /> Associate's Degree<br/>
+            <input type="checkbox" id="edu4" name="edu4" value="Bachelor's Degree" /> Bachelor's Degree<br/>
+            <br/>
+        </div>
+
+        <div class="writeInInputs">
+            <h3><label>Appointment Date<label/></h3>
+            <input type="date" id="appt_date" name="appt_date"/>
+            <br/><br/>
+        </div>
+
+         <div class="chooseInput">
+            <h3><label>Reason for Appointment</label></h3>
+            <br/>
+            <select id="reason" name="reason">
+              <option value="disabled selected">Select Your Reason</option>
+              <option value="Product Inquiry">Product Inquiry</option>
+              <option value="Interview">Interview</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Other">Other</option>
+            </select>
+            <br/>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div class="writeInInputs">
+            <h3><label>Message<label/></h4>
+            <br/>
+            <textarea name="message" placeholder="Enter a Message"></textarea>
+            <br/>
+        </div>
+  </form>
+  <div id="buttonBreak">
+        <button onclick="SubForm()">  Submit </button>
+    </div>
+</div>
+</body>
+</html>

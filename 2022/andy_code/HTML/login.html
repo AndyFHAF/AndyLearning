@@ -1,0 +1,73 @@
+<html> 
+<head>
+<title> Login Page </title>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+	<script src="loginForm.js"> </script>
+
+<style>
+	 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    body{
+        text-align: center;
+        background-color: #2BD2FF;
+        /*background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);*/
+        font-family: 'Roboto', sans-serif;
+    }
+
+     #form{
+        background-color: white;
+        margin: 50px 350px 100px 350px;
+        padding: 40px 0 100px 0;
+        border-radius: 10px;
+        width: auto;
+        height: auto;
+      
+    }
+    #email, #password{
+    	width:75%;
+        border-top: 1px;
+        border-left: none;
+        border-right:none;
+        padding:15px;
+        text-align: left;
+        margin-bottom: 50px;
+    }
+
+    #signIn{
+        background-color: #FA8BFF;
+        background-image: linear-gradient(90deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+        border:none;
+        color: white;
+        padding:20px;
+        border-radius: 20px;
+        width:50%;
+        text-align: center;
+        font-size:25px;
+        text-decoration: none;
+
+
+    }
+
+</style>
+
+</head>
+<body> 
+	<div id="form">
+		<h1> DJ Portal </h1>
+		<div id="header"> </div>
+
+		<input type="email" placeholder="Enter Email" id="email"/>
+    	<input type="password" placeholder="Enter Password" id="password"/>
+
+
+		<button onclick="signIn()" id="signIn"> Sign In </button> 
+
+		<a href="display.html"> Check out the current queue </a> <br/><br/>
+    		<a href="form.html"> Song Form  </a> 
+
+		</div>
+		
+		</body>
+		
+		</html> 
